@@ -17,7 +17,7 @@
         android:theme="@style/Theme.WhatToWatch"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
 
             <intent-filter>
@@ -26,9 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchByIdActivity" />
-        <activity android:name=".MovieDetailsActivity" />
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".activity.SearchByIdActivity" />
+        <activity android:name=".activity.MovieDetailsActivity" />
+        <activity android:name=".activity.SeriesDetailsActivity" />
+        <activity android:name=".activity.SearchFragment" />
     </application>
 
 </manifest>

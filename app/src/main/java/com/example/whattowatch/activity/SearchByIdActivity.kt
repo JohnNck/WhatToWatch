@@ -1,6 +1,6 @@
-package com.example.whattowatch
+package com.example.whattowatch.activity
 
-import MovieAdapter
+import com.example.whattowatch.adapters.MovieAdapter
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -15,6 +15,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import com.example.whattowatch.MyViewModel
+import com.example.whattowatch.R
 import com.example.whattowatch.response.MovieModel
 import com.example.whattowatch.util.Credentials
 import com.squareup.picasso.Picasso
@@ -38,14 +40,13 @@ class SearchByIdActivity : AppCompatActivity() {
         setContentView(R.layout.id_search)
 
 
-        // Initialize views
         movieId = findViewById(R.id.giveNumber)
         movieName = findViewById(R.id.movieName)
         buttonSearch = findViewById(R.id.button)
         movieOverView = findViewById(R.id.overView)
         moviePoster = findViewById(R.id.moviePoster)
         buttonChange = findViewById(R.id.mainActivityGo)
-        // Observe the LiveData from the ViewModel
+
         myViewModel.movie.observe(this, Observer { movie ->
             if (movie != null) {
                 updateUI(movie)
@@ -56,20 +57,19 @@ class SearchByIdActivity : AppCompatActivity() {
         movieId.setOnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_DONE ||
                 (event?.action == KeyEvent.ACTION_DOWN && event.keyCode == KeyEvent.KEYCODE_ENTER)) {
-                // Close the keyboard
+
                 hideKeyboard()
-                true  // Return true to indicate the event was handled
+                true
             } else {
                 false
             }
 
         }
         buttonChange.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        // Set button click listener
         buttonSearch.setOnClickListener {
             val apiKey = Credentials.API_KEY
             val movieIdValue = movieId.text.toString().toIntOrNull()
@@ -93,8 +93,7 @@ class SearchByIdActivity : AppCompatActivity() {
 
         Picasso.get()
             .load(posterUrl)
-            .error(R.drawable.error_image)         // Optional: Error image
+            .error(R.drawable.error_image)
             .into(moviePoster)
     }
-
 }

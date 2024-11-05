@@ -5,7 +5,9 @@ plugins {
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
-
+kapt {
+    correctErrorTypes = true
+}
 android {
     namespace = "com.example.whattowatch"
     compileSdk = 34
@@ -49,10 +51,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.ui.test.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-// recyclerView
+    // recyclerView
     implementation(libs.androidx.recyclerview)
     // For control over item selection of both touch and mouse driven selection
     implementation(libs.androidx.recyclerview.selection)
@@ -67,10 +70,18 @@ dependencies {
 
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
-//Glide
-    implementation (libs.glide) // Latest version
+    //Glide
+    implementation (libs.glide)
     annotationProcessor (libs.compiler)
     //picaso
     implementation (libs.picasso)
+    implementation (libs.androidx.activity.ktx)
+    implementation (libs.androidx.fragment.ktx)
+    androidTestImplementation (libs.androidx.espresso.core.v350)
 
+configurations.all {
+    resolutionStrategy {
+        force ("androidx.test.espresso:espresso-core:3.5.0") // Use the version compatible with your project
+    }
+}
 }

@@ -3,11 +3,15 @@
 
     <item
         android:id="@+id/homeMenu"
-        android:title="Home"
-        android:icon="@drawable/home_icon"
+        android:title="Movies"
+        android:icon="@drawable/movies_icon"
         />
     <item
+        android:id="@+id/tvSeriesMenu"
+        android:title="Tv Series"
+        android:icon="@drawable/live_tv_menu" />
+    <item
         android:id="@+id/searchMenu"
-        android:title="Home"
+        android:title="Search"
         android:icon="@drawable/search" />
 </menu>
