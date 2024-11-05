@@ -1,4 +1,4 @@
-package com.example.whattowatch.activity
+package com.example.whattowatch.ui.activity
 
 import android.os.Bundle
 import android.webkit.WebSettings
@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.whattowatch.MyViewModel
+import com.example.whattowatch.ui.MyViewModel
 import com.example.whattowatch.R
 import com.example.whattowatch.util.Credentials
 import dagger.hilt.android.AndroidEntryPoint

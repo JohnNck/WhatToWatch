@@ -1,4 +1,4 @@
-package com.example.whattowatch.activity
+package com.example.whattowatch.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

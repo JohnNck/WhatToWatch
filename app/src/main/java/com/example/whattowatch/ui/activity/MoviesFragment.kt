@@ -1,4 +1,4 @@
-package com.example.whattowatch.activity
+package com.example.whattowatch.ui.activity
 
 import com.example.whattowatch.adapters.MovieAdapter
 import android.content.Intent
@@ -11,7 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.whattowatch.MyViewModel
+import com.example.whattowatch.ui.MyViewModel
 import com.example.whattowatch.R
 import com.example.whattowatch.response.MovieResults
 import com.example.whattowatch.util.Credentials

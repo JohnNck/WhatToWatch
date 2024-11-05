@@ -1,5 +1,5 @@
 
-package com.example.whattowatch
+package com.example.whattowatch.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
